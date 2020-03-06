@@ -6,6 +6,7 @@ public class UserRegistrationProblem {
     String lastNamePattern = "^[A-Z][a-z]{2,}$";
     String emailId = "^[a-z]+[.]?([-+0-9]*)?([a-z0-9]+)+[@]+(([a-z]{3,5})|([0-9]))+[.]+[a-z]{2,3}+(([.]+[a-z]{2,3})*)$";
     String mobilePattern = "^[0-9]{2}[ ][0-9]{10}$";
+    String passwordRule1 = "^[a-zA-Z0-9]{8,}$";
 
     //MAIN METHOD
     public static void main(String[] args) {
@@ -30,5 +31,10 @@ public class UserRegistrationProblem {
     //METHOD FOR MOBILE FORMAT
     public boolean validateMobileFormat(String mobile) {
         return (Pattern.matches(mobilePattern, mobile));
+    }
+
+    //METHOD FOR PASSWORD RULE1
+    public boolean validatePasswordRule1(String passwordRule) {
+        return (Pattern.matches(passwordRule1, passwordRule ));
     }
 }
