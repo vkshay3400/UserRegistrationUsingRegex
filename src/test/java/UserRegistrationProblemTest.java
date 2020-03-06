@@ -81,4 +81,20 @@ public class UserRegistrationProblemTest {
             Assert.assertFalse(result);
         }
     }
+
+    //TEST CASE TO CHECK VALID MOBILE FORMAT
+    @Test
+    public void givenMobileNumber_whenValid_thenReturn() {
+        String mobile = "91 9919819801";
+        boolean result = validate.validateMobileFormat(mobile);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK INVALID MOBILE FORMAT
+    @Test
+    public void givenMobileNumber_whenInvalid_thenReturn() {
+        String mobile = "91991981980";
+        boolean result = validate.validateMobileFormat(mobile);
+        Assert.assertFalse(result);
+    }
 }
