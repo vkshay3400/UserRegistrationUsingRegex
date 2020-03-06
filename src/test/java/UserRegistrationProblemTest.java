@@ -129,4 +129,20 @@ public class UserRegistrationProblemTest {
         boolean result = validate.validatePasswordRule2(passwordRule);
         Assert.assertFalse(result);
     }
+
+    //TEST CASE TO CHECK VALID PASSWORD RULE3
+    @Test
+    public void givenPasswordRule3_whenValid_thenReturn() {
+        String passwordRule = "bridgelabZ1";
+        boolean result = validate.validatePasswordRule3(passwordRule);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK INVALID PASSWORD RULE3
+    @Test
+    public void givenPasswordRule3_whenInvalid_thenReturn() {
+        String passwordRule = "bridge";
+        boolean result = validate.validatePasswordRule3(passwordRule);
+        Assert.assertFalse(result);
+    }
 }

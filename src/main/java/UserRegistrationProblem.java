@@ -8,6 +8,7 @@ public class UserRegistrationProblem {
     String mobilePattern = "^[0-9]{2}[ ][0-9]{10}$";
     String passwordRule1 = "^[a-zA-Z0-9]{8,}$";
     String passwordRule2="^(?=.*[A-Z])[A-Za-z0-9]{8,}$";
+    String passwordRule3="^(?=.*[0-9])[A-Za-z0-9]{8,}$";
 
     //MAIN METHOD
     public static void main(String[] args) {
@@ -42,5 +43,10 @@ public class UserRegistrationProblem {
     //METHOD FOR PASSWORD RULE2
     public boolean validatePasswordRule2(String passwordRule) {
         return (Pattern.matches(passwordRule2, passwordRule ));
+    }
+
+    //METHOD FOR PASSWORD RULE3
+    public boolean validatePasswordRule3(String passwordRule) {
+        return (Pattern.matches(passwordRule3, passwordRule ));
     }
 }
