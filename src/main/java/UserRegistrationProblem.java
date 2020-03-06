@@ -7,8 +7,9 @@ public class UserRegistrationProblem {
     String emailId = "^[a-z]+[.]?([-+0-9]*)?([a-z0-9]+)+[@]+(([a-z]{3,5})|([0-9]))+[.]+[a-z]{2,3}+(([.]+[a-z]{2,3})*)$";
     String mobilePattern = "^[0-9]{2}[ ][0-9]{10}$";
     String passwordRule1 = "^[a-zA-Z0-9]{8,}$";
-    String passwordRule2="^(?=.*[A-Z])[A-Za-z0-9]{8,}$";
-    String passwordRule3="^(?=.*[0-9])[A-Za-z0-9]{8,}$";
+    String passwordRule2="^(?=.*[A-Z])[A-Za-z0-9]*.{8,}$";
+    String passwordRule3="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]*.{8,}$";
+    String passwordRule4="^(?=.*[0-9])(?=.*[~!@#$%^&*().?+])(?=.*[A-Z])[A-Za-z0-9]*.{8,}$";
 
     //MAIN METHOD
     public static void main(String[] args) {
@@ -48,5 +49,10 @@ public class UserRegistrationProblem {
     //METHOD FOR PASSWORD RULE3
     public boolean validatePasswordRule3(String passwordRule) {
         return (Pattern.matches(passwordRule3, passwordRule ));
+    }
+
+    //METHOD FOR PASSWORD RULE4
+    public boolean validatePasswordRule4(String passwordRule) {
+        return (Pattern.matches(passwordRule4, passwordRule ));
     }
 }

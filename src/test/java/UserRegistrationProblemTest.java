@@ -141,8 +141,24 @@ public class UserRegistrationProblemTest {
     //TEST CASE TO CHECK INVALID PASSWORD RULE3
     @Test
     public void givenPasswordRule3_whenInvalid_thenReturn() {
-        String passwordRule = "bridge";
+        String passwordRule = "bridgelab";
         boolean result = validate.validatePasswordRule3(passwordRule);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE TO CHECK VALID PASSWORD RULE4
+    @Test
+    public void givenPasswordRule4_whenValid_thenReturn() {
+        String passwordRule = "bridgelabZ1%";
+        boolean result = validate.validatePasswordRule4(passwordRule);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK INVALID PASSWORD RULE4
+    @Test
+    public void givenPasswordRule4_whenInvalid_thenReturn() {
+        String passwordRule = "bridgelab";
+        boolean result = validate.validatePasswordRule4(passwordRule);
         Assert.assertFalse(result);
     }
 }
