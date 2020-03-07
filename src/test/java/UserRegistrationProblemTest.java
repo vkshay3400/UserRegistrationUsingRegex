@@ -32,39 +32,71 @@ public class UserRegistrationProblemTest {
 
     //TEST CASE TO CHECK FIRST NAME VALID
     @Test
-    public void givenFirstName_whenValid_thenReturn() {
-        String fname = "Akshay";
-        boolean result = validate.validateFirstName(fname);
+    public void givenFirstName_WhenValid_ThenReturnTrue() {
+        String name = "Akshay";
+        boolean result = validate.validateFirstName(name);
         Assert.assertTrue(result);
     }
 
     //TEST CASE TO CHECK FIRST NAME INVALID
     @Test
-    public void givenFirstName_whenInvalid_thenReturn() {
-        String fname = "akshay";
-        boolean result = validate.validateFirstName(fname);
+    public void givenFirstName_WhenInvalid_ThenReturnFalse() {
+        String name = "akshay";
+        boolean result = validate.validateFirstName(name);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE TO CHECK MINIMUM THREE FIRST NAME CHARACTER VALID
+    @Test
+    public void givenFirstName_MinimumThreeCharacterWhenValid_ThenReturnTrue() {
+        String name = "Akshay";
+        boolean result = validate.validateFirstName(name);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK MINIMUM THREE FIRST NAME CHARACTER INVALID
+    @Test
+    public void givenFirstName_MinimumThreeCharacterWhenInvalid_ThenReturnTrue() {
+        String name = "ak";
+        boolean result = validate.validateFirstName(name);
         Assert.assertFalse(result);
     }
 
     //TEST CASE TO CHECK LAST NAME VALID
     @Test
-    public void givenLastName_whenValid_thenReturn() {
-        String fname = "Power";
-        boolean result = validate.validateLastName(fname);
+    public void givenLastName_WhenValid_ThenReturnTrue() {
+        String name = "Power";
+        boolean result = validate.validateLastName(name);
         Assert.assertTrue(result);
     }
 
     //TEST CASE TO CHECK LAST NAME INVALID
     @Test
-    public void givenLastName_whenInvalid_thenReturn() {
-        String fname = "power";
-        boolean result = validate.validateLastName(fname);
+    public void givenLastName_WhenInvalid_ThenReturnFalse() {
+        String name = "power";
+        boolean result = validate.validateLastName(name);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE TO CHECK MINIMUM THREE LAST NAME CHARACTER VALID
+    @Test
+    public void givenLastName_MinimumThreeCharacterWhenValid_ThenReturnTrue() {
+        String name = "Power";
+        boolean result = validate.validateFirstName(name);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK MINIMUM THREE LAST NAME CHARACTER INVALID
+    @Test
+    public void givenLastName_MinimumThreeCharacterWhenInvalid_ThenReturnTrue() {
+        String name = "Po";
+        boolean result = validate.validateFirstName(name);
         Assert.assertFalse(result);
     }
 
     //TEST CASE TO CHECK EMAIL ID VALID
     @Test
-    public void givenEmailId_whenValid_thenReturn() {
+    public void givenEmailId_WhenValid_ThenReturnTrue() {
         for (int index=0; index<validateEmail.length-1; index++) {
             String email = validateEmail[index];
             boolean result = validate.validateEmailId(email);
@@ -74,7 +106,7 @@ public class UserRegistrationProblemTest {
 
     //TEST CASE TO CHECK EMAIL ID INVALID
     @Test
-    public void givenEmailId_whenInvalid_thenReturn() {
+    public void givenEmailId_WhenInvalid_ThenReturnFalse() {
         for (int index=0; index<invalidateEmail.length-1; index++) {
             String email = invalidateEmail[index];
             boolean result = validate.validateEmailId(email);
@@ -84,7 +116,7 @@ public class UserRegistrationProblemTest {
 
     //TEST CASE TO CHECK VALID MOBILE FORMAT
     @Test
-    public void givenMobileNumber_whenValid_thenReturn() {
+    public void givenMobileNumber_WhenValid_ThenReturnTrue() {
         String mobile = "91 9919819801";
         boolean result = validate.validateMobileFormat(mobile);
         Assert.assertTrue(result);
@@ -92,7 +124,7 @@ public class UserRegistrationProblemTest {
 
     //TEST CASE TO CHECK INVALID MOBILE FORMAT
     @Test
-    public void givenMobileNumber_whenInvalid_thenReturn() {
+    public void givenMobileNumber_WhenInvalid_ThenReturnFalse() {
         String mobile = "91991981980";
         boolean result = validate.validateMobileFormat(mobile);
         Assert.assertFalse(result);
@@ -100,65 +132,65 @@ public class UserRegistrationProblemTest {
 
     //TEST CASE TO CHECK VALID PASSWORD RULE1
     @Test
-    public void givenPasswordRule1_whenValid_thenReturn() {
+    public void givenPasswordName_WhenValid_ThenReturnTrue() {
         String passwordRule = "Bridgelabz1";
-        boolean result = validate.validatePasswordRule1(passwordRule);
+        boolean result = validate.validatePasswordName(passwordRule);
         Assert.assertTrue(result);
     }
 
     //TEST CASE TO CHECK INVALID PASSWORD RULE1
     @Test
-    public void givenPasswordRule1_whenInvalid_thenReturn() {
+    public void givenPasswordName_WhenInvalid_ThenReturnFalse() {
         String passwordRule = "bridge";
-        boolean result = validate.validatePasswordRule1(passwordRule);
+        boolean result = validate.validatePasswordName(passwordRule);
         Assert.assertFalse(result);
     }
 
     //TEST CASE TO CHECK VALID PASSWORD RULE2
     @Test
-    public void givenPasswordRule2_whenValid_thenReturn() {
+    public void givenPasswordUpperCase_WhenValid_ThenReturnTrue() {
         String passwordRule = "bridgelabZ";
-        boolean result = validate.validatePasswordRule2(passwordRule);
+        boolean result = validate.validatePasswordUpperCase(passwordRule);
         Assert.assertTrue(result);
     }
 
     //TEST CASE TO CHECK INVALID PASSWORD RULE2
     @Test
-    public void givenPasswordRule2_whenInvalid_thenReturn() {
+    public void givenPasswordUpperCase_WhenInvalid_ThenReturnFalse() {
         String passwordRule = "bridge";
-        boolean result = validate.validatePasswordRule2(passwordRule);
+        boolean result = validate.validatePasswordUpperCase(passwordRule);
         Assert.assertFalse(result);
     }
 
     //TEST CASE TO CHECK VALID PASSWORD RULE3
     @Test
-    public void givenPasswordRule3_whenValid_thenReturn() {
+    public void givenPasswordNumber_WhenValid_ThenReturnTrue() {
         String passwordRule = "bridgelabZ1";
-        boolean result = validate.validatePasswordRule3(passwordRule);
+        boolean result = validate.validatePasswordNumber(passwordRule);
         Assert.assertTrue(result);
     }
 
     //TEST CASE TO CHECK INVALID PASSWORD RULE3
     @Test
-    public void givenPasswordRule3_whenInvalid_thenReturn() {
+    public void givenPasswordNumber_WhenInvalid_ThenReturnFalse() {
         String passwordRule = "bridgelab";
-        boolean result = validate.validatePasswordRule3(passwordRule);
+        boolean result = validate.validatePasswordNumber(passwordRule);
         Assert.assertFalse(result);
     }
 
     //TEST CASE TO CHECK VALID PASSWORD RULE4
     @Test
-    public void givenPasswordRule4_whenValid_thenReturn() {
+    public void givenPasswordSpecialCharacter_WhenValid_ThenReturnTrue() {
         String passwordRule = "bridgelabZ1%";
-        boolean result = validate.validatePasswordRule4(passwordRule);
+        boolean result = validate.validatePasswordSpecialCharacter(passwordRule);
         Assert.assertTrue(result);
     }
 
     //TEST CASE TO CHECK INVALID PASSWORD RULE4
     @Test
-    public void givenPasswordRule4_whenInvalid_thenReturn() {
+    public void givenPasswordSpecialCharacter_WhenInvalid_ThenReturnFalse() {
         String passwordRule = "bridgelab";
-        boolean result = validate.validatePasswordRule4(passwordRule);
+        boolean result = validate.validatePasswordSpecialCharacter(passwordRule);
         Assert.assertFalse(result);
     }
 }

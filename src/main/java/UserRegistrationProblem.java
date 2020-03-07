@@ -6,10 +6,10 @@ public class UserRegistrationProblem {
     String lastNamePattern = "^[A-Z][a-z]{2,}$";
     String emailId = "^[a-z]+[.]?([-+0-9]*)?([a-z0-9]+)+[@]+(([a-z]{3,5})|([0-9]))+[.]+[a-z]{2,3}+(([.]+[a-z]{2,3})*)$";
     String mobilePattern = "^[0-9]{2}[ ][0-9]{10}$";
-    String passwordRule1 = "^[a-zA-Z0-9]{8,}$";
-    String passwordRule2="^(?=.*[A-Z])[A-Za-z0-9]*.{8,}$";
-    String passwordRule3="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]*.{8,}$";
-    String passwordRule4="^(?=.*[0-9])(?=.*[~!@#$%^&*().?+])(?=.*[A-Z])[A-Za-z0-9]*.{8,}$";
+    String passwordName = "^[a-zA-Z0-9]{8,}$";
+    String passwordUpperCase="^(?=.*[A-Z])[A-Za-z0-9]*.{8,}$";
+    String passwordNumber="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]*.{8,}$";
+    String passwordSpecialCharacter="^(?=.*[0-9])(?=.*[~!@#$%^&*().?+])(?=.*[A-Z])[A-Za-z0-9]*.{8,}$";
 
     //MAIN METHOD
     public static void main(String[] args) {
@@ -37,22 +37,22 @@ public class UserRegistrationProblem {
     }
 
     //METHOD FOR PASSWORD RULE1
-    public boolean validatePasswordRule1(String passwordRule) {
-        return (Pattern.matches(passwordRule1, passwordRule ));
+    public boolean validatePasswordName(String passwordRule) {
+        return (Pattern.matches(passwordName, passwordRule ));
     }
 
     //METHOD FOR PASSWORD RULE2
-    public boolean validatePasswordRule2(String passwordRule) {
-        return (Pattern.matches(passwordRule2, passwordRule ));
+    public boolean validatePasswordUpperCase(String passwordRule) {
+        return (Pattern.matches(passwordUpperCase, passwordRule ));
     }
 
     //METHOD FOR PASSWORD RULE3
-    public boolean validatePasswordRule3(String passwordRule) {
-        return (Pattern.matches(passwordRule3, passwordRule ));
+    public boolean validatePasswordNumber(String passwordRule) {
+        return (Pattern.matches(passwordNumber, passwordRule ));
     }
 
     //METHOD FOR PASSWORD RULE4
-    public boolean validatePasswordRule4(String passwordRule) {
-        return (Pattern.matches(passwordRule4, passwordRule ));
+    public boolean validatePasswordSpecialCharacter(String passwordRule) {
+        return (Pattern.matches(passwordSpecialCharacter, passwordRule ));
     }
 }
